@@ -13,6 +13,7 @@
 @interface IDCPageViewController : UIViewController
 @property (nonatomic, weak) id<IDCPageViewControllerDelegate> pageViewControllerDelegate;
 -(void)scrollToIndexViewController:(NSInteger)index animated:(BOOL)animated;
+-(NSArray<__kindof UIViewController *> *)getRealAllChildViewControllers;
 @end
 
 

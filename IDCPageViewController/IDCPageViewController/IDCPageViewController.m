@@ -83,8 +83,20 @@ typedef NS_ENUM (NSUInteger, IDCPageViewControllerItemAppearState) {
 }
 
 -(NSArray<__kindof UIViewController *> *)childViewControllers{
-    return [self.selfChildViewControllers copy];
+    if (self.bInitView) {
+        return [super childViewControllers];
+    }else{
+        return [self.selfChildViewControllers copy];
+    }
 }
+
+-(NSArray<__kindof UIViewController *> *)getRealAllChildViewControllers{
+    
+    return [self.selfChildViewControllers copy];
+    
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
